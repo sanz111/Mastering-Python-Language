@@ -4,18 +4,18 @@ import socket
 
 SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-SERVER_IP = '192.168.1.9'  # SOCKET.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-SERVER_PORT = 5555  # Port on which target or server or other client is listening
+SERVER_IP = input("Enter the Server IPaddess you want to connect: ")
+SERVER_PORT = int(input("Enter the Port no. Server is Operating on: "))
 ADDRESS = (SERVER_IP, SERVER_PORT)
 
 try:
-    print("Trying to Connect....\n")
+    print("Trying to Connect.... ", ADDRESS)
     SOCKET.connect(ADDRESS)
     print("Connection Successful\n")
-    MESSAGE = b"This is test message being sent through TCP\n"
-    SOCKET.sendall(MESSAGE)
+    MESSAGE = input("Enter the Message you want to send :\n")
+    SOCKET.sendall(MESSAGE.encode('utf-8'))
     print("Message sent")
 except Exception as E:
-    print("Socket error! Server might be down", E)
+    print(E)
 finally:
     SOCKET.close()
