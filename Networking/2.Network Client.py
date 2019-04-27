@@ -4,9 +4,9 @@ import socket
 
 SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-HOSTIP = '192.168.1.9'  # SOCKET.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-PORT = 5555
-ADDRESS = (HOSTIP, PORT)
+SERVER_IP = '192.168.1.9'  # SOCKET.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+SERVER_PORT = 5555  # Port on which target or server or other client is listening
+ADDRESS = (SERVER_IP, SERVER_PORT)
 
 try:
     print("Trying to Connect....\n")
