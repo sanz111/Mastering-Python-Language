@@ -13,20 +13,20 @@ def LocalIP():
         IP = s.getsockname()[0]
     except:
         IP = socket.gethostbyname(socket.gethostname())
-        # IP = '127.0.1.1'
     finally:
         s.close()
     return IP
 
 
 SERVER_IP = LocalIP()
-SERVER_PORT = 5555
+SERVER_PORT = int(input("Enter the port on which you want your server to be operated: "))
 SOCKET.bind((SERVER_IP, SERVER_PORT))
 SOCKET.listen(5)  # no.of simultaneous connections
 print("Server Started...Listening....at", SERVER_IP, SERVER_PORT)
 
 CLIENTSOCKET, CLIENTADDRESS = SOCKET.accept()
 print("Connection Established with: ", CLIENTADDRESS)
+print("Waiting for the client response ...")
 
 DATA = CLIENTSOCKET.recv(512)
 
