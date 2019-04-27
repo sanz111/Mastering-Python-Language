@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 
-import  socket
+import socket
 
-hostIP = socket.gethostbyname('CyberSecurityExpert') #(hostname or locahost or hostIP, '' )
-host2 = socket.gethostbyaddr('127.0.1.1')
-print("Getting hostIP by name: ",hostIP) # means 127.0.1.1
-print("Getting host by address: ",host2)
+SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-port = 5555
-address = (hostIP,5555)
+HOSTIP = '192.168.1.9'  # SOCKET.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+PORT = 5555
+ADDRESS = (HOSTIP, PORT)
 
-client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(address)
 try:
-    msg = b"This is test message being sent through TCP\n"
-    client.sendall(msg)
-except socket.errno as e:
-   print("Socket error", e)
+    print("Trying to Connect....\n")
+    SOCKET.connect(ADDRESS)
+    print("Connection Successful\n")
+    MESSAGE = b"This is test message being sent through TCP\n"
+    SOCKET.sendall(MESSAGE)
+    print("Message sent")
+except Exception as E:
+    print("Socket error! Server might be down", E)
 finally:
-    client.close()
+    SOCKET.close()

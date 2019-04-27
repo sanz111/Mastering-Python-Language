@@ -2,25 +2,28 @@
 
 import socket
 
-size = 512 #bytes we expect to receive
-host = ''
-port = 9898
+SOCKET = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+SOCKET.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
+HOST = ''
+PORT = 5555
+SOCKET.bind((HOST, PORT))
+print("Server Started...Listening....\n")
+SOCKET.listen(5)  # no.of simultaneous connections
 
-sock.bind((host,port))
-sock.listen(5)
+CLIENTSOCKET, CLIENTADDRESS = SOCKET.accept()
+print("Connection Established with: ", CLIENTADDRESS)
 
-c, address = sock.accept()
-data = c.recv(size)
+DATA = CLIENTSOCKET.recv(512)
 
-if data:
-    f = open("storage.dat","w")
-    print("Connection is from", address[0])
-    f.write(address[0])
+if DATA:
+
+    print("DATA RECEIVED IS:\n", DATA.decode("utf-8"))
+    f = open("storage.dat", "w")
+    print("Also the DATA has been saved to the file storage.dat\n")
+    f.write(CLIENTADDRESS[0])
     f.write(":")
-    f.write(data.decode("utf-8"))
+    f.write(DATA.decode("utf-8"))
     f.close()
 
-sock.close()
+SOCKET.close()
