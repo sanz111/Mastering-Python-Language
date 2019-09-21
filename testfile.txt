@@ -1,0 +1,5 @@
+YOU are my world
+i am nothing withou you.
+YOU and Father are everything for me
+
+/usr/bin/python3 /home/firoj/Workspace/Mastering-Python3-Language/7.fileHandling.py

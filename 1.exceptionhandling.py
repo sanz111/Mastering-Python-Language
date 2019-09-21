@@ -1,9 +1,10 @@
 
 try:
-    faren = float(input("Enter farenheit temperature:\n"))
+    faren = float(input("Enter temperature:\n"))
     degree = (faren-32.0)*5/9.0
-    l1 = [1, 2, 3, 4, 5]
     print(degree, "degree")
+
+    l1 = [1, 2, 3, 4, 5]
     l1[5] = 6
 except IndexError:
     print("Index out of bound error")

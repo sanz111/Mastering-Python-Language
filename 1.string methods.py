@@ -33,7 +33,7 @@ else:
 
 x = "Cisco"
 if "i" in x:
-    print x
-    print
+    print(x)
+    print()
 
 
