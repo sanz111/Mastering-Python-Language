@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 
 #__init__() method(Constructor) used to declare & initialize private_variables for each instance saperately inside it.
-
+#(PRIVATE_VARIABLES)
 class parent3:
     def __init__(self, a, b):
         self.a = a
@@ -69,7 +69,8 @@ if __name__ == "__main__":
     p4.add()
 
 
-# Now Using child_class __init__(constructor) to overide value of parent's private_variables.
+# Now Using child_class __init__()(constructor) & super() to overide value of parent's private_variables.
+#(PRIVATE_VARIABLES)
 class parent5:
     def __init__(self, a, b):
         self.a = a
