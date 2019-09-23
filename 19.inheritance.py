@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 
 #__init__() method(Constructor) used to declare & initialize private_variables for each instance saperately inside it.
-#(PRIVATE_VARIABLES)
+# (PRIVATE_VARIABLES)
 class parent3:
     def __init__(self, a, b):
         self.a = a
@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
 
 # Now Using child_class __init__()(constructor) & super() to overide value of parent's private_variables.
-#(PRIVATE_VARIABLES)
+# (PRIVATE_VARIABLES)
 class parent5:
     def __init__(self, a, b):
         self.a = a
@@ -96,3 +96,36 @@ c5 = child5(70,30)
 c5.add()
 c6 = child5(90,30)
 c6.add()
+
+
+
+class Calculator:
+    
+    a=0
+    b=0
+
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    def add(self, a, b):
+        return a + b
+
+    def sub(self, a, b):
+        return a - b
+
+    def mul(self, a, b):
+        return a * b
+
+    def div(self, a, b):
+        return a/b
+
+if __name__ == "__main__":
+    
+    c = Calculator(0,0)
+    print("Calculator Result\n===================")
+    print(c.add(20,5))
+    print(c.sub(20,5))
+    print(c.mul(20,5))
+    print(c.div(20,5))
+
