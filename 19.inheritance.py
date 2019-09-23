@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
+#Variable set outside __init__ belong to the class. They're shared by all instances.(GLOBAL_TO_THE_WHOLE_CLASS)
+# Variables created inside __init__ (and all other method functions) and accessed with self always, 
+# and belong to the object instance.(GLOBAL_TO_EACH_INSTANCE_OF_THE_CLASS)
 
 #METHOD 1
 # Using parent_class_name instead of parent_class_instance for accessing instance variable of parent class
 
 class parent1:
-
     a = 20
     b = 30
     
@@ -18,7 +20,7 @@ class child1(parent1):
 if __name__ == "__main__":
     
     c1 = child1()
-    c1.add()
+    c1.add() #works because variables are outside __init__()
 
 
 
