@@ -11,14 +11,14 @@ class parent1:
     
 class child1(parent1):
 
-    def calculateSum(self):
+    def add(self):
         self.sum = parent1.a + parent1.b
         print(self.sum)
 
 if __name__ == "__main__":
     
     c1 = child1()
-    c1.calculateSum()
+    c1.add()
 
 
 
@@ -33,7 +33,7 @@ class parent2:
     
 class child2(parent2):
 
-    def calculateSum(self, p2):
+    def add(self, p2):
         self.sum = p2.a + p2.b
         print(self.sum)
 
@@ -41,4 +41,4 @@ if __name__ == "__main__":
     
     c2 = child2()
     p2 = parent2()
-    c2.calculateSum(p2)
+    c2.add(p2)
