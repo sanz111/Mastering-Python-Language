@@ -6,8 +6,8 @@ What is POLYMORPHISM ?
   ‘the capacity to take on different forms or behaviour’.
 '''
 
-# In OOP, Polymorphism means a subclass can override a method of the base class
-
+# In Python, Polymorphism allows us to define exact same methods in the child class as defined in the parent class.
+# Polymorphism is the SPECIAL_CASE of inheritance in python where child class has exact same method_name as its parent class.
 
 ''' 
 1) Dynamic/Duck-Type Polymorphism :
