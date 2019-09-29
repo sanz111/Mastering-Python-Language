@@ -35,6 +35,9 @@ def isAnagram2(str1, str2):
 
 def isAnagram3(str1, str2):
 
+    if len(str1) != len(str2):
+        return False
+
     d = dict()
     for letter in str1:
         if letter not in d:
