@@ -52,8 +52,8 @@ def isAnagram3(str1, str2):
             d[letter] = d[letter]-1
 
     # looping through the values of dictionary
-    for i in d:
-        if d[i] != 0:
+    for i in d.values():
+        if i != 0:
             return False
     return True
 
